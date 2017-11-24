@@ -1,12 +1,8 @@
 # Preprocess-SVHN
-Preprocess Google Street View House Number dataset for consumption by AGIEF.
+Preprocess Google Street View House Number (SVHN) dataset for consumption by AGIEF](https://github.com/ProjectAGI/agi).
 
 ## Introduction
-The purpose of this repository is to provide some useful tools to preprocess the
-[SVHN dataset](http://ufldl.stanford.edu/housenumbers/) to be compatible with [AGIEF](https://github.com/ProjectAGI/agi).
-
-The dataset we're using is **Format 2** which contains 32x32 cropped digits
-from the original images. There are 10 labels for this dataset (0-9) for each digit.
+The tools provided are only compatible with **Format 2** of the [SVHN](http://ufldl.stanford.edu/housenumbers/) which contains 32x32 cropped digits from the original images. There are 10 classes for this dataset (0-9), one for each digit.
 
 Benchmarks for the SVHN dataset, and others can be found [here](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#5356484e).
 
