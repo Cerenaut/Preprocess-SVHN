@@ -74,7 +74,7 @@ def preprocess(dataset, features, labels, target_path):
 
         filename = generate_filename(dataset, label, label_count[label])
         filepath = os.path.join(target_path, filename)
-        scipy.misc.toimage(features[:, :, :, i], cmin=0.0, cmax=...).save(filepath)
+        scipy.misc.toimage(features[:, :, :, i], cmin=0.0).save(filepath)
 
         if i % DISPLAY_STEP == 0 or i == 1:
             logging.info('Step #%i: saved %s', i, filename)
