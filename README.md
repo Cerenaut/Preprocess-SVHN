@@ -32,6 +32,12 @@ To preprocess the test set, use the following:
 
 `python svhn.py --dataset test --input_mat /path/to/test_32x32.mat --output_path /path/to/output/testing`
 
+### Grayscale
+
+The original images are coloured, you may optionally pass the `--grayscale` parameter to convert the images to grayscale.
+
+### Logging
+
 You may optionally pass the `--logging info` parameter to display the progress of the script, which looks like this:
 
 ```
