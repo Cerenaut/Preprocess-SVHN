@@ -22,7 +22,7 @@ This format is required for the AGIEF to parse the images and extract the labels
 
 ## Usage
 
-Before starting, ensure that you have the `train_32x32.mat` and `test_32x32.mat` provided [http://ufldl.stanford.edu/housenumbers/](here). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
+Before starting, ensure that you have the `train_32x32.mat` and `test_32x32.mat` provided [here](http://ufldl.stanford.edu/housenumbers/). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
 
 To preprocess the training set, use the following:
 
