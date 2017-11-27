@@ -21,4 +21,28 @@ for the filename is as follows: `TYPE_RANDOM_LABEL_LABELCOUNT.png`
 This format is required for the AGIEF to parse the images and extract the labels.
 
 ## Usage
-TODO
+
+Before starting, ensure that you have the `train_32x32.mat` and `test_32x32.mat` provided [here](http://ufldl.stanford.edu/housenumbers/). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
+
+To preprocess the training set, use the following:
+
+`python svhn.py --dataset train --input_mat /path/to/train_32x32.mat --output_path /path/to/output/training`
+
+To preprocess the test set, use the following:
+
+`python svhn.py --dataset test --input_mat /path/to/test_32x32.mat --output_path /path/to/output/testing`
+
+You may optionally pass the `--logging info` parameter to display the progress of the script, which looks like this:
+
+```
+...
+[utils.py:80 - preprocess() - INFO] Step #6000: saved test_3d5a50_6_471.png
+[utils.py:80 - preprocess() - INFO] Step #7000: saved test_4f1261_4_703.png
+[utils.py:80 - preprocess() - INFO] Step #8000: saved test_a28782_10_543.png
+[utils.py:80 - preprocess() - INFO] Step #9000: saved test_cb28b7_1_1752.png
+[utils.py:80 - preprocess() - INFO] Step #10000: saved test_c7297a_9_621.png
+[utils.py:80 - preprocess() - INFO] Step #11000: saved test_53fdfc_8_687.png
+[utils.py:80 - preprocess() - INFO] Step #12000: saved test_0fb756_2_1932.png
+[utils.py:80 - preprocess() - INFO] Step #13000: saved test_cca311_6_999.png
+...
+```
