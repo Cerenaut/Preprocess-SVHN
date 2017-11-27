@@ -1,7 +1,7 @@
 import os
-import scipy
 import logging
 import binascii
+from PIL import Image
 
 NUM_RANDOM = 6
 NUM_LABELS = 10
@@ -49,7 +49,7 @@ def generate_filename(dataset, label, label_count):
     filename = '%s_%s_%i_%i.png' % (dataset, random, label, label_count)
     return filename
 
-def preprocess(dataset, features, labels, target_path):
+def preprocess(dataset, features, labels, target_path, grayscale=False):
     """
     Map the specified level to the numerical value level for the logger
 
@@ -74,7 +74,12 @@ def preprocess(dataset, features, labels, target_path):
 
         filename = generate_filename(dataset, label, label_count[label])
         filepath = os.path.join(target_path, filename)
-        scipy.misc.toimage(features[:, :, :, i], cmin=0.0).save(filepath)
+        image = Image.fromarray(features[:, :, :, i], cmin=0.0)
+
+        if grayscale:
+            image = image.convert('LA')
+
+        image.save(filepath)
 
         if i % DISPLAY_STEP == 0 or i == 1:
             logging.info('Step #%i: saved %s', i, filename)

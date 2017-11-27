@@ -23,10 +23,14 @@ def setup_arg_parsing():
     parser.add_argument('--output_path', dest='output_path', required=True,
                         help='Path to folder for saving generated images')
 
+    parser.add_argument('--grayscale', dest='grayscale', action='store_true', required=False,
+                        help='Convert images to grayscale (default=%(default)s).')
+
     parser.add_argument('--logging', dest='logging', required=False,
                         help='Logging level (default=%(default)s). '
                              'Options: debug, info, warning, error, critical')
 
+    parser.set_defaults(grayscale=False)
     parser.set_defaults(logging='warning')
 
     return parser.parse_args()
@@ -50,7 +54,7 @@ def main():
     labels = data['y']
 
     # Start preprocessing images
-    utils.preprocess(args.dataset, features, labels, args.output_path)
+    utils.preprocess(args.dataset, features, labels, args.output_path, args.grayscale)
 
 if __name__ == '__main__':
     main()
