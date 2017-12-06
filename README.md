@@ -6,7 +6,7 @@ The tools provided are only compatible with **Format 2** of the [SVHN](http://uf
 
 Benchmarks for the SVHN dataset, and others can be found [here](https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#5356484e).
 
-## Preprocessing
+### Preprocessing
 The training and test datasets are provided in the `mat` format by the authors.
 They are then loaded into Numpy arrays, and the features are separated from the labels.
 
@@ -20,7 +20,16 @@ for the filename is as follows: `TYPE_RANDOM_LABEL_LABELCOUNT.png`
 
 This format is required for the AGIEF to parse the images and extract the labels.
 
-## Usage
+## Getting Started
+
+### Requirements
+- Python 2.7+
+
+### Installation
+
+Install the Python dependencies using pip: `pip install -r REQUIREMENTS.txt`
+
+### Usage
 
 Before starting, ensure that you have the `train_32x32.mat` and `test_32x32.mat` provided [here](http://ufldl.stanford.edu/housenumbers/). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
 
@@ -31,6 +40,12 @@ To preprocess the training set, use the following:
 To preprocess the test set, use the following:
 
 `python svhn.py --dataset test --input_mat /path/to/test_32x32.mat --output_path /path/to/output/testing`
+
+#### Grayscale
+
+The original images are coloured, you may optionally pass the `--grayscale` parameter to convert the images to grayscale.
+
+#### Logging
 
 You may optionally pass the `--logging info` parameter to display the progress of the script, which looks like this:
 
