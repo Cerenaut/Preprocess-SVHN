@@ -77,7 +77,9 @@ def preprocess(dataset, features, labels, target_path, grayscale=False):
         image = Image.fromarray(features[:, :, :, i])
 
         if grayscale:
-            image = image.convert('LA')
+            image = image.convert('L')
+        else:
+            image = image.convert('RGB')
 
         image.save(filepath)
 
