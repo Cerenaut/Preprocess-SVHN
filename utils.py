@@ -74,7 +74,7 @@ def preprocess(dataset, features, labels, target_path, grayscale=False):
 
         filename = generate_filename(dataset, label, label_count[label])
         filepath = os.path.join(target_path, filename)
-        image = Image.fromarray(features[:, :, :, i], cmin=0.0)
+        image = Image.fromarray(features[:, :, :, i])
 
         if grayscale:
             image = image.convert('LA')
