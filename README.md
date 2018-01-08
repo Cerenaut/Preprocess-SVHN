@@ -31,11 +31,15 @@ Install the Python dependencies using pip: `pip install -r REQUIREMENTS.txt`
 
 ### Usage
 
-Before starting, ensure that you have the `train_32x32.mat` and `test_32x32.mat` provided [here](http://ufldl.stanford.edu/housenumbers/). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
+Before starting, ensure that you have the `train_32x32.mat`, `test_32x32.mat` and `extra_32x32.mat` provided [here](http://ufldl.stanford.edu/housenumbers/). The script assumes the output directory exists so ensure that you have a designated output directory for the preprocessed images as it will not be created automatically.
 
 To preprocess the training set, use the following:
 
 `python svhn.py --dataset train --input_mat /path/to/train_32x32.mat --output_path /path/to/output/training`
+
+Optionally, preprocess the additional training examples:
+
+`python svhn.py --dataset train --input_mat /path/to/extra_32x32.mat --output_path /path/to/output/training`
 
 To preprocess the test set, use the following:
 
