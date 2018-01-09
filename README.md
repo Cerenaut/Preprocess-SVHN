@@ -39,11 +39,11 @@ To preprocess the training set, use the following:
 
 Optionally, preprocess the additional training examples:
 
-`python svhn.py --dataset train --input_mat /path/to/extra_32x32.mat --output_path /path/to/output/training`
+`python src/svhn.py --dataset train --input_mat /path/to/extra_32x32.mat --output_path /path/to/output/training`
 
 To preprocess the test set, use the following:
 
-`python svhn.py --dataset test --input_mat /path/to/test_32x32.mat --output_path /path/to/output/testing`
+`python src/svhn.py --dataset test --input_mat /path/to/test_32x32.mat --output_path /path/to/output/testing`
 
 #### Grayscale
 
