@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import os
 import logging
 import scipy.io as sio
 
@@ -35,6 +36,22 @@ def setup_arg_parsing():
 
     return parser.parse_args()
 
+
+def check_args(args):
+    """
+    Validates the arguments
+
+    :param args: The commandline arguments
+    """
+    if not os.path.exists(args.input_path):
+        logging.error('The input path is not valid: ' + args.input_path)
+        exit(1)
+
+    if not os.path.isdir(args.output_path):
+        logging.error('The output path is not valid: ' + args.output_path)
+        exit(1)
+
+
 def main():
     """
     The main scope of the preprocessor containing the high level code
@@ -46,8 +63,16 @@ def main():
     log_format = "[%(filename)s:%(lineno)s - %(funcName)s() - %(levelname)s] %(message)s"
     logging.basicConfig(format=log_format, level=utils.logger_level(args.logging))
 
+    # Validate args
+    check_args(args)
+
     # Load MAT source file
-    data = sio.loadmat(args.input_path)
+    try:
+        data = sio.loadmat(args.input_path)
+    except Exception as ex:
+        logging.error('Failed to load input MAT file: ' + args.input_path)
+        logging.error('Exception: %s', ex)
+        exit(1)
 
     # Split data into features and labels
     features = data['X']
