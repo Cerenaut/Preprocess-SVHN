@@ -35,7 +35,7 @@ Before starting, ensure that you have the `train_32x32.mat`, `test_32x32.mat` an
 
 To preprocess the training set, use the following:
 
-`python svhn.py --dataset train --input_mat /path/to/train_32x32.mat --output_path /path/to/output/training`
+`python src/svhn.py --dataset train --input_mat /path/to/train_32x32.mat --output_path /path/to/output/training`
 
 Optionally, preprocess the additional training examples:
 
