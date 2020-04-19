@@ -16,7 +16,7 @@ for the filename is as follows: `TYPE_RANDOM_LABEL_LABELCOUNT.png`
 - `TYPE`: Indicates dataset type, could be either `train` or `test`
 - `RANDOM`: Short randomly generated UUID-style characters e.g. `7daa28`
 - `LABEL`: The groundtruth label for the image (between 0-9)
-- `LABELCOUNT`: The count for how many times a label was seen to easily
+- `LABELCOUNT`: The count for how many times a label was seen to easily check for class balancing
 
 This format is useful for quickly extracting information about the dataset and target labels from the filename, while ensuring that each image's filename is unique.
 
